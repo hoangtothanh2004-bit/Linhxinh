@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #1a0033 0%, #0a0020 60%, #000 100%);
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* ✨ Chữ trong tim */
+.text-container {
+  position: absolute;
+  top: 8%;
+  width: 100%;
+  text-align: center;
+  z-index: 3;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(255, 100, 200, 0.8);
+  animation: fadeIn 3s ease-in-out forwards;
+}
+
+.text-container h1 {
+  font-size: 28px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.text-container p {
+  font-size: 16px;
+  font-style: italic;
+  color: rgba(255, 220, 255, 0.9);
+}
+
+.text-container h2 {
+  font-size: 18px;
+  color: #a8e6ff;
+  margin-top: 5px;
+}
+
+/* 🌸 Hiệu ứng cho ảnh trong tim */
+.heart-image {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 30px rgba(255, 100, 200, 0.5);
+  z-index: 2;
+  animation: pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 20px rgba(255, 100, 200, 0.5);
+    transform: translate(-50%, -50%) scale(0.98);
+  }
+  100% {
+    box-shadow: 0 0 40px rgba(255, 100, 200, 0.8);
+    transform: translate(-50%, -50%) scale(1.02);
+  }
+}
